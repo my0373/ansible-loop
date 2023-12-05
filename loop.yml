@@ -1,0 +1,19 @@
+---
+- hosts: localhost
+  tasks:
+
+  - name: Loop through the variables
+    ansible.builtin.debug:
+      # msg: "user={{ item.0 }} key={{ item.1 }}"
+      msg: "user={{ item.0 }}"
+    with_subelements:
+      - "{{ aap_users }}"
+      - team_member
+    
+    
+  # - name: Loop through the variables
+  #   ansible.builtin.debug:
+  #     msg: "user={{ item.0.name }} key={{ item.1 }}"
+  #   with_subelements:
+  #     - "{{ aap_users }}"
+  #     - team_member

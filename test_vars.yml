@@ -1,0 +1,54 @@
+---
+# vars file for aap_setup
+aap_users:
+  myork: 
+    team_member: 
+    - cisco
+    - juniper  
+  password: "Redhat123"
+  email: myork@redhat.com 
+  superuser: yes
+  state: present
+
+  cisco:
+    team_member: 
+      - cisco
+    password: "Redhat123"
+    email: myork@redhat.com 
+    superuser: no
+    state: present
+
+  juniper:
+      team_member: 
+        - cisco
+      password: "Redhat123"
+      email: myork@redhat.com 
+      superuser: no
+      state: present
+  
+  security:
+      team_member: 
+        - cisco
+      password: "Redhat123"
+      email: myork@redhat.com 
+      superuser: no
+      state: present
+
+aap_teams:
+  cisco:
+    description: "Cisco admin team" 
+    state: present
+  juniper:
+    description: "Juniper admin team" 
+    state: present
+  helpdesk:
+    description: "The helpdesk" 
+    state: present
+
+aap_projects: 
+  juniper:
+    description: "Juniper Playbooks"
+    git_http_url: "https://github.com/my0373/ansible-juniper.git"
+  cisco:
+    description: "Cisco Playbooks"
+    git_http_url: "https://github.com/my0373/ansible_cisco_ios.git"
